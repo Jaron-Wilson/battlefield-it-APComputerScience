@@ -1,0 +1,433 @@
+------------Pseudocode------------------------------------------------------------------------
+Initialize Nim Game:
+    Initialize pileSize as a random integer between 10 and 100
+    Initialize computerFirst as a random boolean
+    Initialize smartMode as a random boolean
+    Initialize isComputerTurn as computerFirst
+
+Function smartMoveMarbleNum(num):
+    If num is 15, 31, or 63:
+        Return a random integer between 1 and num/2
+    Else:
+        Return the result of findNextPowerOfTwoMinusOne(num)
+
+Function findNextPowerOfTwoMinusOne(num):
+    Initialize powerOfTwo as 1
+    While powerOfTwo - 1 is less than num:
+        Multiply powerOfTwo by 2
+    If powerOfTwo - 1 is greater than num:
+        Return num - (powerOfTwo / 2 - 1)
+    Else:
+        Return powerOfTwo / 2 - 1
+
+Function stupidMoveMarbleNum(num):
+    Return a random integer between 1 and num/2
+
+Function isComputerTurn():
+    Return isComputerTurn
+
+Function isSmart():
+    Return smartMode
+
+Output "Welcome to Nim Game!"
+Output "You have " + pileSize + " elements to start"
+Output "Coin toss result for computer mode: " + (If smartMode is true then "smart mode" else "stupid mode")
+
+While pileSize is greater than 1:
+    If isComputerTurn is true:
+        If smartMode is true:
+            Set move to the result of smartMoveMarbleNum(pileSize)
+        Else:
+            Set move to the result of stupidMoveMarbleNum(pileSize)
+        Output "It's computer's turn"
+        Output "Computer takes " + move
+        Subtract move from pileSize
+        Output "Now there are " + pileSize + " left."
+    Else:
+        Repeat until a valid playerMove is entered:
+            Output "What's your move? "
+            Input playerMove
+            If playerMove is less than 1 or greater than pileSize / 2:
+                Output "Invalid move. You can only take between 1 and " + pileSize / 2 + " marbles."
+        Subtract playerMove from pileSize
+        Output "Now there are " + pileSize + " left."
+
+    Set isComputerTurn to the opposite of isComputerTurn
+
+Output "Computer won!" if isComputerTurn is true, else Output "You won!"
+
+---------------------------------------------------------------------------------------
+
+ERROR 1:
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+
+        at NimGame.main(NimGame.java:52)
+ERROR 2:
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+        Syntax error, insert ";" to complete Statement
+
+        at NimGame.initializeGame(NimGame.java:17)
+        at NimGame.<init>(NimGame.java:11)
+        at NimGame.main(NimGame.java:53)
+ERROR 3:
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+        computerFirt cannot be resolved to a variable
+
+        at NimGame.initializeGame(NimGame.java:19)
+        at NimGame.<init>(NimGame.java:11)
+        at NimGame.main(NimGame.java:53)
+ERROR 4:
+Computer takes 1
+Now there are 1 left.
+Exception in thread "main" java.lang.Error: Unresolved compilation problem:
+        Syntax error, insert ";" to complete BlockStatements
+
+        at NimGame.announceWinner(NimGame.java:90)
+        at NimGame.main(NimGame.java:83)
+ERROR 5:
+Welcome to Nim Game!
+You have 37 elements to start
+Coin toss result for computer mode: smart mode
+Exception in thread "main" java.lang.Error: Unresolved compilation problem:
+        Syntax error on token "=", Expression expected after this token
+
+        at NimGame.findNextPowerOfTwoMinusOne(NimGame.java:32)
+        at NimGame.smartMoveMarbleNum(NimGame.java:27)
+        at NimGame.main(NimGame.java:62)
+
+TEST RUNS:
+
+<PATH>  & 'C:\Program Files\Eclipse Adoptium\jdk-21.0.0.35-hotspot\bin\java.exe' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\jaron_m49\AppData\Roaming\Code\User\workspaceStorage\fc3881c7ba2efc7de083b6ea1355a410\redhat.java\jdt_ws\NimGame_436335ff\bin' 'NimGame'
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+        at NimGame.main(NimGame.java:52)
+<PATH>  & 'C:\Program Files\Eclipse Adoptium\jdk-21.0.0.35-hotspot\bin\java.exe' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\jaron_m49\AppData\Roaming\Code\User\workspaceStorage\fc3881c7ba2efc7de083b6ea1355a410\redhat.java\jdt_ws\NimGame_436335ff\bin' 'NimGame'
+Exception in thread "main" java.lang.Error: Unresolved compilation problem:
+        Syntax error, insert ";" to complete Statement
+
+        at NimGame.initializeGame(NimGame.java:17)
+        at NimGame.main(NimGame.java:53)
+ 
+Exception in thread "main" java.lang.Error: Unresolved compilation problem:
+        computerFirt cannot be resolved to a variable
+
+        at NimGame.initializeGame(NimGame.java:19)
+        at NimGame.<init>(NimGame.java:11)
+        at NimGame.main(NimGame.java:53)
+ 
+Welcome to Nim Game!
+You have 65 elements to start
+Coin toss result for computer mode: smart mode
+It's computer's turn
+Computer takes 2
+Now there are 63 left.
+What's your move? 2
+Now there are 61 left.
+It's computer's turn
+Computer takes 30
+Now there are 31 left.
+What's your move? 2
+Now there are 29 left.
+It's computer's turn
+Computer takes 14
+Now there are 15 left.
+What's your move? 2
+Now there are 13 left.
+It's computer's turn
+Computer takes 6
+Now there are 7 left.
+What's your move? 2
+Now there are 5 left.
+It's computer's turn
+Computer takes 2
+Now there are 3 left.
+What's your move? 2
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 2
+Invalid move. You can only take between 1 and 1 marbles.
+Now there are 2 left.
+It's computer's turn
+Computer takes 1
+Now there are 1 left.
+Exception in thread "main" java.lang.Error: Unresolved compilation problem:
+        Syntax error, insert ";" to complete BlockStatements
+
+        at NimGame.announceWinner(NimGame.java:90)
+        at NimGame.main(NimGame.java:83)
+ 
+Welcome to Nim Game!
+You have 38 elements to start
+Coin toss result for computer mode: stupid mode
+What's your move? 1
+Now there are 37 left.
+It's computer's turn  
+Computer takes 12     
+Now there are 25 left.
+What's your move? 2   
+Now there are 23 left.
+It's computer's turn
+Computer takes 11
+Now there are 12 left.
+What's your move? 3
+Now there are 9 left.
+It's computer's turn
+Computer takes 1
+Now there are 8 left.
+What's your move? 4
+Now there are 4 left.
+Computer takes 2
+Now there are 2 left.
+What's your move? 3
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 2
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 1 left.
+You won!
+ 
+Welcome to Nim Game!
+You have 12 elements to start
+Coin toss result for computer mode: smart mode
+What's your move? 10
+Invalid move. You can only take between 1 and 6 marbles.
+What's your move? 2
+Now there are 10 left.
+It's computer's turn
+Computer takes 3
+Now there are 7 left.
+What's your move? 3
+Now there are 4 left.
+It's computer's turn
+Computer takes 1
+Now there are 3 left.
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 2
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 2 left.
+It's computer's turn
+Computer takes 1
+Now there are 1 left.
+Computer won!
+ 
+Welcome to Nim Game!
+You have 22 elements to start
+Coin toss result for computer mode: smart mode
+It's computer's turn
+Computer takes 7
+Now there are 15 left.
+What's your move? 1
+Now there are 14 left.
+It's computer's turn
+Computer takes 7
+Now there are 7 left.
+What's your move? 2
+Now there are 5 left.
+It's computer's turn
+Computer takes 2
+What's your move?
+3
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 2 left.
+It's computer's turn
+Computer takes 1
+Now there are 1 left.
+Computer won!
+ 
+Welcome to Nim Game!
+You have 68 elements to start
+Coin toss result for computer mode: stupid mode
+What's your move? 2
+Now there are 66 left.
+It's computer's turn
+Computer takes 24
+Now there are 42 left.
+What's your move? 3
+Now there are 39 left.
+It's computer's turn
+Computer takes 18
+Now there are 21 left.
+What's your move? 4
+Now there are 17 left.
+It's computer's turn
+Computer takes 8
+Now there are 9 left.
+What's your move? 8
+Invalid move. You can only take between 1 and 4 marbles.
+What's your move? 4
+Now there are 5 left.
+It's computer's turn
+Now there are 3 left.
+What's your move? 2
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 2 left.
+It's computer's turn
+Computer takes 1
+Now there are 1 left.
+Computer won!
+ 
+Welcome to Nim Game!
+You have 84 elements to start
+Coin toss result for computer mode: smart mode
+What's your move? 100
+Invalid move. You can only take between 1 and 42 marbles.
+What's your move? 42
+Now there are 42 left.
+It's computer's turn
+Computer takes 11
+Now there are 31 left.
+What's your move? 11
+Now there are 20 left.
+It's computer's turn
+Computer takes 5
+Now there are 15 left.
+What's your move? 4
+Now there are 11 left.
+It's computer's turn
+Computer takes 4
+Now there are 7 left.
+What's your move? 3
+Now there are 4 left.
+It's computer's turn
+Now there are 3 left.
+What's your move? 2
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 2 left.
+It's computer's turn
+Computer takes 1
+Now there are 1 left.
+Computer won!
+ 
+Welcome to Nim Game!
+You have 60 elements to start
+Coin toss result for computer mode: stupid mode
+It's computer's turn
+Computer takes 16
+Now there are 44 left.
+What's your move? 1
+Now there are 43 left.
+It's computer's turn
+Computer takes 7
+Now there are 36 left.
+What's your move? 7
+Now there are 29 left.
+It's computer's turn
+Computer takes 13
+Now there are 16 left.
+What's your move? 10
+Invalid move. You can only take between 1 and 8 marbles.
+What's your move? 8
+Now there are 8 left.
+It's computer's turn
+Computer takes 3
+Now there are 5 left.
+Invalid move. You can only take between 1 and 2 marbles.
+What's your move? 2
+Now there are 3 left.
+It's computer's turn
+Computer takes 1
+Now there are 2 left.
+What's your move? 1
+Now there are 1 left.
+You won!
+ 
+Welcome to Nim Game!
+You have 78 elements to start
+Coin toss result for computer mode: smart mode
+What's your move? 6
+Now there are 72 left.
+It's computer's turn
+Computer takes 9
+Now there are 63 left.
+What's your move? 4
+Now there are 59 left.
+It's computer's turn
+Computer takes 28
+Now there are 31 left.
+What's your move? 2
+Now there are 29 left.
+It's computer's turn
+Computer takes 14
+Now there are 15 left.
+What's your move? 1
+Now there are 14 left.
+It's computer's turn
+Computer takes 7
+Now there are 7 left.
+What's your move? 3
+Now there are 4 left.
+It's computer's turn
+Now there are 3 left.
+What's your move? 2
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 2 left.
+It's computer's turn
+Computer takes 1
+Now there are 1 left.
+Computer won!
+ 
+Welcome to Nim Game!
+You have 63 elements to start
+Coin toss result for computer mode: smart mode
+What's your move? 19
+Now there are 44 left.
+It's computer's turn
+Computer takes 13
+Now there are 31 left.
+What's your move? 29
+Invalid move. You can only take between 1 and 15 marbles.
+What's your move? 15
+Now there are 16 left.
+It's computer's turn
+Computer takes 1
+Now there are 15 left.
+What's your move? 2
+Now there are 13 left.
+It's computer's turn
+Computer takes 6
+Now there are 7 left.
+What's your move? 3
+Now there are 4 left.
+It's computer's turn
+Now there are 3 left.
+What's your move? 4
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 2 left.
+It's computer's turn
+Computer takes 1
+Now there are 1 left.
+Computer won!
+ 
+Welcome to Nim Game!
+You have 40 elements to start
+Coin toss result for computer mode: stupid mode
+It's computer's turn
+Computer takes 11
+Now there are 29 left.
+What's your move? 19
+Invalid move. You can only take between 1 and 14 marbles.
+What's your move? 14
+Now there are 15 left.
+It's computer's turn
+Computer takes 4
+Now there are 11 left.
+What's your move? 2
+Now there are 9 left.
+It's computer's turn
+Computer takes 3
+Now there are 6 left.
+What's your move? 3
+Now there are 3 left.
+It's computer's turn
+Computer takes 1
+Now there are 2 left.
+What's your move?
+4
+Invalid move. You can only take between 1 and 1 marbles.
+What's your move? 1
+Now there are 1 left.
+You won!
