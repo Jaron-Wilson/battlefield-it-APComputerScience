@@ -1,0 +1,16 @@
+1. Prompt the user to enter the total number of friends in the network.
+2. Validate the input: Ensure the entered value is an integer greater than or equal to 1.
+3. Store the number of friends in a variable (numFriends).
+4. Create a 2D array (netArr) of size numFriends x numFriends to represent the social network.
+5. Create an array (names) of size numFriends to store the names of the friends.
+6. Iterate over numFriends, prompting the user to enter each friend's name and storing it in the names array.
+7. Iterate over numFriends, comparing each friend to every other friend:
+    - If the two friends' names are different, calculate the lexicographic difference between their names.
+    - If the lexicographic difference is less than or equal to 12, set the corresponding element in the netArr to "1", indicating a friendship.
+    - Otherwise, set the corresponding element in the netArr to "0", indicating no friendship.
+8. Print the social network chart:
+    - Print a header row with the names of the friends.
+    - For each friend, print their name followed by their relationships with all other friends.
+9. Print the total number of friends each person has:
+    - For each friend, calculate their total number of friends by counting the "1"s in their corresponding row of the netArr.
+    - Print the friend's name and their total number of friends.
